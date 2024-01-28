@@ -36,7 +36,7 @@ export const signin = async (req, res, next) => {
           email: isUser.email,
         };
         const { password, ...others } = isUser._doc;
-        const token = jwt.sign(user, process.env.JWT_SCT, { expiresIn: "30d" });
+        const token = jwt.sign(user, "foodie", { expiresIn: "30d" });
         res.status(200).json({ ...others, token });
       } else {
         next(errorHandler(400, "Incorrect username/password"));

@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 mongoose
-  .connect(process.env.MONGODB_URL)
+  .connect("mongodb+srv://foodie:foodie@cluster0.jvqu2dj.mongodb.net/")
   .then(() => {
     console.log("DB connected");
   })
